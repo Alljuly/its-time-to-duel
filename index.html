@@ -21,13 +21,34 @@
 					<span id="score_points">Win : 0 | Lose: 0</span>
 				</div>
 				<div class="menu_avatar"></div>
-				<div class="card_details">
+				<div class="card_details frame">
 					<p id="card-name"></p>
 					<p id="card-type"></p>
 				</div>
 			</div>
 			<div class="container__rigth">
-				<div class="card-box__container"></div>
+				<div class="card-box__container">
+					<div class="card-box framed" id="computer-cards"></div>
+					<div class="card-versus">
+						<div class="versus-top">
+							<div class="card-infield">
+								<img id="player-field-card" height="180px" width="125px" />
+							</div>
+							<img
+								src="./src/assets/icons/millenium2.png"
+								alt=""
+								height="100px"
+							/>
+							<div class="card-infield">
+								<img id="computer-field-card" height="180px" width="125px" />
+							</div>
+						</div>
+						<div class="versus-bottom">
+							<button id="next-duel" class="rpgui-button" onclick="resetDuel()">WIN</button>
+						</div>
+					</div>
+					<div class="card-box framed"></div>
+				</div>
 			</div>
 		</div>
 		<script src="/src/scripts/engine.js"></script>

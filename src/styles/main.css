@@ -34,19 +34,40 @@
 	height: 100vh;
 }
 
-.container-left {
+.container__left {
 	width: 35%;
 	min-width: 300px;
+	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: right;
 	justify-content: space-around;
 }
 .score_box {
-	background-color: #fff;
+	background-color: #f8eded;
 	padding: 30px;
+	text-align: center;
 }
 
 .frame {
-	border: 3px solid #000;
+	border: 3px solid #663838;
 	border-radius: 5px;
+}
+
+.card_details {
+	background-color: #f8eded;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	height: 6rem;
+	width: 90%;
+}
+
+#card-name {
+	font-size: 0.8rem;
+}
+
+#card-type {
+	font-size: 1rem;
 }
