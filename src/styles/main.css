@@ -42,6 +42,40 @@
 	align-items: right;
 	justify-content: space-around;
 }
+
+.container__right {
+	width: 65%;
+}
+
+.card-box__container {
+	height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	padding: 0.3rem;
+}
+
+.card-versus {
+	display: flex;
+	margin: auto;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.versus-top,
+.versus-bottom {
+	justify-content: row;
+	margin-inline: 1rem;
+}
+
+.rpgui-button {
+	width: min-content;
+	margin-inline: auto;
+	margin-bottom: 1rem;
+}
+
 .score_box {
 	background-color: #f8eded;
 	padding: 30px;
@@ -61,7 +95,6 @@
 	align-items: center;
 	justify-content: space-between;
 	height: 6rem;
-	width: 90%;
 }
 
 #card-name {
@@ -70,4 +103,23 @@
 
 #card-type {
 	font-size: 1rem;
+}
+
+#next-duel {
+	display: none;
+}
+
+.card-box {
+	height: 9rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.card-infield {
+	height: 11.2rem;
+	border: 2px solid #fff;
+	border-radius: 8px;
+	width: 8rem;
 }
