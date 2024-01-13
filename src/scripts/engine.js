@@ -23,7 +23,7 @@ const players = {
 	player2: "computer-cards",
 };
 
-const imgPath = ".src/assets/icons/";
+const imgPath = "./src/assets/icons/";
 
 const cardData = [
 	{
@@ -31,39 +31,64 @@ const cardData = [
 		name: "Blue Eyes White Dragon",
 		type: "Paper",
 		img: `${imgPath}dragon.png`,
-        winOf : [1],
-        loseOf: [2]
+		winOf: [1],
+		loseOf: [2],
 	},
-    {
-        id: 1,
-        name: "Dark Magician",
-        type: "Rock",
-        img: `${pathImages}magician.png`,
-        winOf: [2],
-        LoseOf: [0]
-    },
-    {
-         id: 2,
-        name: "Exodia",
-        type: "Scissors",
-        img: `${pathImages}exodia.png`,
-        winOf: [0],
-        LoseOf: [2]
-    }
+	{
+		id: 1,
+		name: "Dark Magician",
+		type: "Rock",
+		img: `${imgPath}magician.png`,
+		winOf: [2],
+		LoseOf: [0],
+	},
+	{
+		id: 2,
+		name: "Exodia",
+		type: "Scissors",
+		img: `${imgPath}exodia.png`,
+		winOf: [0],
+		LoseOf: [2],
+	},
 ];
 
+async function getRandomCardId() {
+	const randomIndex = Math.floor(Math.random() * cardData.length);
+	return cardData[randomIndex].id;
+}
 
-async function drawCards(cardNumbers, fieldSide){
-    for(let i = 0; i < cardNumbers; i++){
-        const randomIdCard = await getRandomCardId()
-        const cardImage = await creatCardImage 
-    }
+async function createCardImage(idCard, fieldSide) {
+	const cardImage = document.createElement("img");
+	cardImage.setAttribute("heigth", "100px");
+	cardImage.setAttribute("src", "./src/assets/icons/card-back.png");
+	cardImage.setAttribute("data-id", idCard);
+	cardImage.classList.add("card");
 
-} 
+	if (fieldSide === players.player1) {
+		cardImage.addEventListener("click", () => {
+			setCardField(cardImage.getAttribute("data-id"));
+		});
+	}
+
+	cardImage.addEventListener("mouseover", () => {
+		drawSelectedCard(idCard);
+	});
+
+	return cardImage(idCard);
+}
+
+async function drawCards(cardNumbers, fieldSide) {
+	for (let i = 0; i < cardNumbers; i++) {
+		const randomIdCard = await getRandomCardId();
+		const cardImage = await createCardImage(randomIdCard, fieldSide);
+
+		document.getElementById(fieldSide).appendChild(cardImage);
+	}
+}
 
 function init() {
-    drawCards(5, "player")
-    drawCards(5, "computer")
+	drawCards(5, players.player1);
+	drawCards(5, players.player2);
 }
 
 init();
