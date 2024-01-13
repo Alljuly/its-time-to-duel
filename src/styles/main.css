@@ -123,3 +123,11 @@
 	border-radius: 8px;
 	width: 8rem;
 }
+
+.card {
+	transition: transform 0.2s;
+}
+
+.card:hover {
+	transform: scale(1.2);
+}
