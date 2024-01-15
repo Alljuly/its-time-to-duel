@@ -1,6 +1,6 @@
 body {
 	cursor: url("../assets/cursor/yugicursor.png"), default;
-	font-family: 'Press Start 2P', system-ui;
+	font-family: "Press Start 2P", system-ui;
 }
 
 button,
@@ -99,6 +99,7 @@ button:hover {
 	padding: 30px;
 	text-align: center;
 	width: 90%;
+	font-size: 1rem !important;
 }
 
 .frame {
